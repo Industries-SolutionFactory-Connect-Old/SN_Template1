@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.76.0'
+project:
+    name: SN_Template1
+    package:
+        name: SN_Template1
+        api_version: '59.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/SN_Template1/tests
+            options:
+                outputdir: robot/SN_Template1/results
+
+    robot_testdoc:
+        options:
+            path: robot/SN_Template1/tests
+            output: robot/SN_Template1/doc/SN_Template1_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
